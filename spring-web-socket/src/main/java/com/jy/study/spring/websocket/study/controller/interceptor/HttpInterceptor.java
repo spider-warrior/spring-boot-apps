@@ -14,7 +14,7 @@ public class HttpInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        logger.info("===> HttpInterceptor#preHandle() runs, uri: {}", request.getRequestURI());
+        logger.debug("===> HttpInterceptor#preHandle() runs, uri: {}", request.getRequestURI());
         return true;
     }
 
@@ -23,7 +23,7 @@ public class HttpInterceptor extends HandlerInterceptorAdapter {
      * */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
-        logger.info("===> HttpInterceptor#postHandle() runs, uri: {}", request.getRequestURI());
+        logger.debug("===> HttpInterceptor#postHandle() runs, uri: {}", request.getRequestURI());
     }
 
     /**
@@ -31,6 +31,6 @@ public class HttpInterceptor extends HandlerInterceptorAdapter {
      * */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-        logger.info("===> HttpInterceptor#afterCompletion() runs, uri: {}", request.getRequestURI());
+        logger.debug("===> HttpInterceptor#afterCompletion() runs, uri: {}", request.getRequestURI());
     }
 }
