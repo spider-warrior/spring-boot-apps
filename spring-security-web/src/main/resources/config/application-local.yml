@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: @db.url@
+    driver-class-name: @db.driver.class@
+    username: @db.username@
+    password: @db.password@
+
+
+
+

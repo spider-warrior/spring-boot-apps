@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container" style="height: 800px">
+    <div class="row">
+        <div class="col-md-5">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-7">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="name">hello: </label>
+                    <input type="text" id="name" class="form-control" placeholder="Your name here...">
+                </div>
+                <button id="send-hello" class="btn btn-default" type="submit">Send</button>
+            </form>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="echo-content">echo: </label>
+                    <input type="text" id="echo-content" class="form-control" placeholder="echo here...">
+                </div>
+                <button id="echo-send" class="btn btn-default" type="submit">Send</button>
+            </form>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="chat-broadcast">group message: </label>
+                    <input type="text" id="chat-broadcast" class="form-control" placeholder="message here...">
+                </div>
+                <button id="broad-send" class="btn btn-default" type="submit">Send</button>
+            </form>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="need-auth">need auth message: </label>
+                    <input type="text" id="need-auth" class="form-control" placeholder="message here...">
+                </div>
+                <button id="need-auth-btn" class="btn btn-default" type="submit">Send</button>
+            </form>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="no-need-auth">no need auth message: </label>
+                    <input type="text" id="no-need-auth" class="form-control" placeholder="message here...">
+                </div>
+                <button id="no-need-auth-btn" class="btn btn-default" type="submit">Send</button>
+            </form>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="no-need-auth">throw runtime exception: </label>
+                </div>
+                <button id="throw-runtime-exception-btn" class="btn btn-default" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="row" style="height: 470px; max-height: 470px; overflow-x: hidden">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Greetings</th>
+                </tr>
+                </thead>
+                <tbody id="greetings">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="margin-bottom: 0; margin-right: 0">
+        <div class="col-md-4 pull-right">当前时间: <span id="current-time">2012-10-10 00:00:00</span></div>
+    </div>
+</div>
+</body>
+</html>

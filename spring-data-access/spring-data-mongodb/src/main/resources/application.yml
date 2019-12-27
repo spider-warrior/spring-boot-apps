@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      uri: "mongodb://192.168.14.46:28018/xf"
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        data.mongodb.core: trace

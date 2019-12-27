@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨域测试</title>
+</head>
+<script type="text/javascript" src="/js/jquery-3.4.0.js"></script>
+<body>
+接口响应:<span id="result"></span>
+</body>
+<script type="text/javascript">
+    function corsRequestFailCallback(err) {
+        $("#result").text(JSON.stringify(err));
+    }
+    function corsRequestSuccessCallback(result) {
+        console.log(result);
+        $("#result").text(result);
+    }
+    function corsRequest() {
+        $.get("//app2.com/cors/test", corsRequestSuccessCallback).fail(corsRequestFailCallback);
+    }
+    $(function() {
+        $.ajaxSetup({crossDomain: true, xhrFields: {withCredentials: true}});
+        corsRequest();
+    });
+</script>
+</html>

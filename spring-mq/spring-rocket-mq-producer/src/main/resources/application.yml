@@ -1,0 +1,12 @@
+server:
+    port: 8081
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+      group: test-producer-group
+#      enable-msg-trace: true
+#      customized-trace-topic: my-trace-topic
+logging:
+    level:
+      root: info

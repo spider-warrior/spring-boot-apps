@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: api
+  profiles:
+    active: @package.environment@
+server:
+  port: 8080
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapping/*.xml
+security:
+  basic:
+    enabled: false

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jwt登陆测试</title>
+</head>
+<script type="text/javascript" src="/js/jquery-3.4.0.js"></script>
+<body>
+<p>用户名: <input id="username" type="text"/></p>
+<p>密码: <input id="password" type="password"/></p>
+<p><button id="login">登陆</button></p>
+<hr/>
+<p><button id="request-protected-resource-btn">请求受保护的资源</button></p>
+<p><button id="request-unprotected-resource-btn">请求开放的的资源</button></p>
+<hr/>
+<p><input id="user-id" type="number"/><button id="clear-login-status">清理用户登陆状态</button></p>
+</body>
+<script type="text/javascript">
+    var jwt;
+    $(function() {
+        $("#login").click(function() {
+            var username = $("#username").val();
+            var password = $("#password").val();
+            $.post("/login", {username: username, password: password}, function(res) {
+                console.info("result: " + JSON.stringify(res));
+                if(res.code === "200") {
+                    jwt = res.data.jwt;
+                }
+            })
+        });
+        $("#request-protected-resource-btn").click(function() {
+            $.ajax({
+                url: "/resources/protected",
+                type: "GET",
+                beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + jwt);},//这里设置header
+                success: function(res) {
+                    console.info("result: " + JSON.stringify(res));
+                }
+            });
+        });
+        $("#request-unprotected-resource-btn").click(function() {
+            $.get("/resources/unprotected", function(res) {
+                console.info("result: " + JSON.stringify(res));
+            });
+        });
+
+        $("#clear-login-status").click(function() {
+            var id = $("#user-id").val();
+            $.ajax({
+                url: "/admin/clearUserLoginStatus/" + id,
+                type: "DELETE",
+                success: function(res) {
+                    console.info("result: " + JSON.stringify(res));
+                }
+            });
+        });
+    });
+</script>
+</html>

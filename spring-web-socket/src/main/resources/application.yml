@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: @project.env@
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    info:
+      enabled: true
+info:
+  app:
+    version: "1.0-SNAPSHOT"
+    description: "spring boot web socket + stomp project"
+    name: "spring web socket study"
+
