@@ -24,7 +24,7 @@ public class ContextControllerAdvice {
      * 400
      * */
     @ExceptionHandler(ConstraintViolationException.class)
-    public Map noHandlerFound(ConstraintViolationException e) {
+    public Map<String, Object> noHandlerFound(ConstraintViolationException e) {
         logger.error("cat a ConstraintViolationException", e);
         Set<ConstraintViolation<?>> errors = e.getConstraintViolations();
         Map<String, Object> result = new HashMap<>();
@@ -32,7 +32,7 @@ public class ContextControllerAdvice {
         if(!CollectionUtils.isEmpty(errors)) {
             Object defaultError = errors.toArray()[0];
             if(defaultError instanceof HibernateConstraintViolation) {
-                HibernateConstraintViolation validation = (HibernateConstraintViolation)defaultError;
+                HibernateConstraintViolation<?> validation = (HibernateConstraintViolation<?>)defaultError;
                 result.put("msg", validation.getMessage());
             }
         }
