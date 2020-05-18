@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jy.study.spring.study.mybatis.mapper.StudentMapper">
+  <resultMap id="BaseResultMap" type="Student">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="birthday" jdbcType="BIGINT" property="birthday" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, birthday
+  </sql>
+  <insert id="insert" parameterType="Student">
+    insert into student (id, name, birthday)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{birthday,jdbcType=BIGINT})
+  </insert>
+
+  <insert id="insertBatch">
+    insert into student
+    (id, name, birthday)
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.id,jdbcType=BIGINT}, #{item.name,jdbcType=VARCHAR}, #{item.birthday,jdbcType=BIGINT})
+    </foreach>
+  </insert>
+</mapper>

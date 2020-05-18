@@ -19,6 +19,7 @@
         <module>spring-mq</module>
         <module>spring-web-auth</module>
         <module>spring-tool-study</module>
+        <module>spring-mybatis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

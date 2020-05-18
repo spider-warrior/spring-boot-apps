@@ -1,0 +1,17 @@
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapping/*.xml
+
+spring:
+    datasource:
+        druid:
+            url: "jdbc:mysql://127.0.0.1:3306/abc?useSSL=false&characterEncoding=UTF-8&createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+            username: "travel"
+            password: "qaz******wsx"
+            driver-class-name: "com.mysql.cj.jdbc.Driver"
+            initial-size: 10
+            max-active: 50
+            min-idle: 2
+    redis:
+        host: 127.0.0.1
+        port: 6379
