@@ -1,0 +1,10 @@
+spring:
+    redis:
+        cluster:
+            nodes:
+                - "node1.redis.service:7000"
+                - "node2.redis.service:7001"
+                - "node3.redis.service:7002"
+                - "node4.redis.service:7003"
+                - "node5.redis.service:7004"
+                - "node6.redis.service:7005"
