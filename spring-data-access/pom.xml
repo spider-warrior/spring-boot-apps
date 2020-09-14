@@ -15,6 +15,7 @@
     <modules>
         <module>spring-data-redis</module>
         <module>spring-data-mongodb</module>
+        <module>spring-data-h2</module>
     </modules>
 
 </project>
