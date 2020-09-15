@@ -1,24 +1,15 @@
 package com.jy.study.dataaccess.h2.domain;
 
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "study_user")
-public class User {
+public class User extends BaseEntity {
+    private static final long serialVersionUID = 1L;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id
-    private Long id;
     private String username;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
@@ -31,8 +22,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-            "id=" + id +
-            ", username='" + username + '\'' +
-            '}';
+            "username='" + username + '\'' +
+            "} " + super.toString();
     }
 }

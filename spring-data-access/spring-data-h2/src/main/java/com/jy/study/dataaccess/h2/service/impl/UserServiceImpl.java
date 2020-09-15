@@ -12,6 +12,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Long create(User user) {
+        user.setCrTime(System.currentTimeMillis());
+        user.setUpTime(user.getCrTime());
         return userRepository.save(user).getId();
     }
 
