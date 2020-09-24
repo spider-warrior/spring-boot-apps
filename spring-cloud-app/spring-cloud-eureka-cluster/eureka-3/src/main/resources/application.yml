@@ -1,0 +1,16 @@
+server:
+    port: 2003
+
+eureka:
+    instance:
+        hostname: eureka3.service.com
+    client:
+        #false 由于该应用为注册中心，所以设置为false,代表不向注册中心注册自己。
+        register-with-eureka: false
+        # 要不要去注册中心获取其他服务的地址
+        fetch-registry: false
+        service-url:
+            defaultZone: "http://eureka1.service.com:2001/eureka/,http://eureka2.service.com:2002/eureka/"
+    server:
+        # 当从其他节点同步实例信息为空时等待的时间
+        wait-time-in-ms-when-sync-empty: 0
