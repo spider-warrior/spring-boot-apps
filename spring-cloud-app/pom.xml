@@ -21,7 +21,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.study.springboot</groupId>
-                <artifactId>service-remote</artifactId>
+                <artifactId>service-core</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
