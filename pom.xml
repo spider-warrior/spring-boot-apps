@@ -20,12 +20,13 @@
         <module>spring-web-auth</module>
         <module>spring-tool-study</module>
         <module>spring-mybatis</module>
+        <module>spring-cloud-app</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.5.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.study.springboot</groupId>
     <artifactId>spring-boot-apps</artifactId>

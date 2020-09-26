@@ -1,4 +1,4 @@
-package com.jy.study.springcloud.serviceremote.domain;
+package com.jy.study.springcloud.serviceremote;
 
 public class User {
     private Long id;

@@ -12,9 +12,9 @@
     <artifactId>spring-cloud-service-cluster</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>service-1</module>
-        <module>service-2</module>
-        <module>service-remote</module>
+        <module>service-core</module>
+        <module>service-provider</module>
+        <module>service-consumer</module>
     </modules>
 
     <dependencies>
