@@ -1,0 +1,23 @@
+server:
+    port: 8099
+spring:
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://gitee.com/goffather/springboot-study.git
+                    basedir: E:\code\java\configcenter\src\git_data
+                    username: yangjian
+                    password: 密码
+    rabbitmq:
+        host: 127.0.0.1
+        port: 5672
+        username: test
+        password: 123456
+    application:
+        name: configserver
+    management:#此处与2.0之前配置不同，配置路径改变，暴露接口
+endpoints:
+    web:
+        exposure:
+            include: "*"
