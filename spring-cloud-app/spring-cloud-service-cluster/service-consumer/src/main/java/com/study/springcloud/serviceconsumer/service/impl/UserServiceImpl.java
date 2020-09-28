@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById() {
-        ServiceInstance serviceInstance = loadBalancerClient.choose("USER-SERVICE-PROVIDER");
+        ServiceInstance serviceInstance = loadBalancerClient.choose("user-service");
         ResponseEntity<User> responseEntity = restTemplate.getForEntity("http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/user/1", User.class);
         return responseEntity.getBody();
     }
