@@ -3,5 +3,6 @@ package com.study.springcloud.serviceconsumer.service;
 import com.jy.study.springcloud.serviceremote.User;
 
 public interface UserService {
-    User getUserById();
+    User getUserById(Long id);
+    User getUserByUsername(String username);
 }

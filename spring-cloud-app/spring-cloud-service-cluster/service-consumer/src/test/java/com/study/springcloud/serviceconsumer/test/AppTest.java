@@ -17,7 +17,7 @@ public class AppTest {
 
     @Test
     public void userServiceTest() {
-        System.out.println(userService.getUserById());
+        System.out.println(userService.getUserById(10000L));
     }
 
 }

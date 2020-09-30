@@ -1,17 +1,8 @@
-package com.jy.study.springcloud.serviceremote;
+package com.study.springcloud.serviceconsumer.controller.param;
 
-public class User {
-    private Long id;
+public class LoginParam {
     private String username;
     private String password;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
@@ -31,9 +22,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-            "id=" + id +
-            ", username='" + username + '\'' +
+        return "LoginParam{" +
+            "username='" + username + '\'' +
             ", password='" + password + '\'' +
             '}';
     }
