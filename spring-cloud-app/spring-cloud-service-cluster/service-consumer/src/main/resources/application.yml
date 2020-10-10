@@ -30,3 +30,8 @@ extension:
     web:
         validator:
             fail-fast: true
+
+application:
+    feign:
+        service:
+            user: "user-service"

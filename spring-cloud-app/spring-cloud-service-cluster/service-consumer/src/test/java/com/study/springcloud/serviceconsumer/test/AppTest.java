@@ -16,8 +16,13 @@ public class AppTest {
     private UserService userService;
 
     @Test
-    public void userServiceTest() {
+    public void getUserByIdTest() {
         System.out.println(userService.getUserById(10000L));
+    }
+
+    @Test
+    public void getUserByIdWithFeignTest() {
+        System.out.println(userService.getUserByIdWithFeign(10000L));
     }
 
 }
