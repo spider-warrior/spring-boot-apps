@@ -21,6 +21,7 @@
         <module>spring-tool-study</module>
         <module>spring-mybatis</module>
         <module>spring-cloud-app</module>
+        <module>spring-actuator-demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
