@@ -6,7 +6,7 @@ import com.jy.study.spring.websocket.study.helper.SecurityHelper;
 import com.jy.study.spring.websocket.study.helper.SessionHelper;
 import com.jy.study.spring.websocket.study.service.UserRoleService;
 import com.jy.study.spring.websocket.study.service.UserTicketService;
-import org.apache.commons.lang3.StringUtils;
+import io.micrometer.core.instrument.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.messaging.Message;

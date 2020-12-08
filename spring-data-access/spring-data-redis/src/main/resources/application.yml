@@ -1,10 +1,23 @@
+#spring:
+#    redis:
+#        cluster:
+#            nodes:
+#                - "node1.redis.service:7000"
+#                - "node2.redis.service:7001"
+#                - "node3.redis.service:7002"
+#                - "node4.redis.service:7003"
+#                - "node5.redis.service:7004"
+#                - "node6.redis.service:7005"
+
 spring:
     redis:
         cluster:
             nodes:
-                - "node1.redis.service:7000"
-                - "node2.redis.service:7001"
-                - "node3.redis.service:7002"
-                - "node4.redis.service:7003"
-                - "node5.redis.service:7004"
-                - "node6.redis.service:7005"
+                - "192.168.1.23:7000"
+                - "192.168.1.23:7001"
+                - "192.168.1.23:7002"
+                - "192.168.1.23:7003"
+                - "192.168.1.23:7004"
+                - "192.168.1.23:7005"
+        password: ifenxi2020
+
