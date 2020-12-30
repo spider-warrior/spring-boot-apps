@@ -20,8 +20,21 @@ public class OrderController {
 
     private final RabbitTemplate rabbitTemplate;
 
+    private final RabbitTemplate.ConfirmCallback confirmCallback = (correlationData, ack, cause) -> {
+        System.out.println("correlationData: " + correlationData);
+        String messageId = correlationData.getId();
+        if(ack) {
+            //如果confirm返回成功则进行更新
+            System.out.println(messageId + ", 消息发送成功,更新消息状态: 1");
+        } else {
+            //失败则进行具体的后续操作: 重试或者补偿手段
+            System.out.println("异常处理");
+        }
+    };
+
     @GetMapping("sendOrderPaidMessage")
     public void sendOrderPaidMessage() {
+        rabbitTemplate.setConfirmCallback(confirmCallback);
         OrderPaidEvent event = new OrderPaidEvent();
         event.setOrderId(RandomUtil.randomString(16));
         event.setPaidMoney(BigDecimal.valueOf(RandomUtil.randomInt(100, 1000)));
