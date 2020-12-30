@@ -13,6 +13,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>${rocket-mq-start-version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.study.springboot</groupId>
             <artifactId>spring-mq-entity</artifactId>
         </dependency>
