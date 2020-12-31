@@ -1,5 +1,5 @@
 server:
-    port: 8097
+    port: 8099
 spring:
     application:
         name: config-server
@@ -12,7 +12,6 @@ spring:
                     username: ${env.GIT_USER}
                     password: ${env.GIT_PASSWORD}
                     default-label: master
-
 eureka:
     instance:
         instance-id: ${spring.cloud.client.ip-address}:${server.port}
@@ -25,3 +24,4 @@ eureka:
         register-with-eureka: true
         service-url:
             defaultZone: "http://eureka1.service.com:2001/eureka/,http://eureka2.service.com:2002/eureka/,http://eureka3.service.com:2003/eureka/"
+

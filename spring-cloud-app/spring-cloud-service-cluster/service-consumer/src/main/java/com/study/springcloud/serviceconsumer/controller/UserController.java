@@ -27,13 +27,13 @@ public class UserController {
     @PostMapping("login")
     public Object login(@Valid LoginParam loginParam, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         User user = userService.getUserByUsername(loginParam.getUsername());
-        if(user == null) {
+        if (user == null) {
             return voWrapper.buildFail(new ErrorInfo("404", "用户不存在"));
         }
-        if(!Objects.equal(user.getPassword(), loginParam.getPassword())) {
+        if (!Objects.equal(user.getPassword(), loginParam.getPassword())) {
             return voWrapper.buildFail(new ErrorInfo("401", "密码不正确"));
         }
-        RequestUtil.setCookie(response, request.getServerName(), "token", RandomUtil.randomString(16) , 60 * 30);
+        RequestUtil.setCookie(response, request.getServerName(), "token", RandomUtil.randomString(16), 60 * 30);
         return voWrapper.buildSuccess("ok");
     }
 

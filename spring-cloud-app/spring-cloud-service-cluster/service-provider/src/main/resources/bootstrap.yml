@@ -1,17 +1,8 @@
-server:
-    port: 8097
 spring:
     application:
-        name: config-server
-    cloud:
-        config:
-            server:
-                git:
-                    uri: https://gitee.com/goffather/springboot-study.git
-                    basedir: D:/tmp/configcenter
-                    username: ${env.GIT_USER}
-                    password: ${env.GIT_PASSWORD}
-                    default-label: master
+        name: service-provider
+    profiles:
+        active: dev
 
 eureka:
     instance:
