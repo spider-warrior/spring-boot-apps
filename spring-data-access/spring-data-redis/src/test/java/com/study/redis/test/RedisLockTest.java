@@ -16,7 +16,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.LockSupport;
 
 /**
- * @author <a href="mailto:yangjian@ifenxi.com">研发部-杨建</a>
  * @version V1.0
  * @since 2020-12-07 21:34
  **/

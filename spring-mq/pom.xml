@@ -16,6 +16,7 @@
         <module>spring-rocket-mq-consumer</module>
         <module>spring-mq-entity</module>
         <module>spring-rabbit-mq-producer</module>
+        <module>spring-rabbit-mq-consumer</module>
     </modules>
 
     <properties>
