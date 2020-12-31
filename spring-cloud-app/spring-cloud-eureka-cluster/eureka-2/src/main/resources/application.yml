@@ -17,11 +17,12 @@ eureka:
     client:
         register-with-eureka: true
         # 要不要去注册中心获取其他服务的地址
-        fetch-registry: false
+        fetch-registry: true
         service-url:
             defaultZone: "http://eureka1.service.com:2001/eureka/,http://eureka3.service.com:2003/eureka/"
     server:
         # 当从其他节点同步实例信息为空时等待的时间
         wait-time-in-ms-when-sync-empty: 0
         eviction-interval-timer-in-ms: 5000
+        response-cache-update-interval-ms: 5000
         use-read-only-response-cache: false
