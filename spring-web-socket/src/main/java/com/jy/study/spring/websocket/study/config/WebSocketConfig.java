@@ -13,18 +13,18 @@ import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.server.support.DefaultHandshakeHandler;
-import sun.security.acl.PrincipalImpl;
 
+import javax.security.auth.Subject;
 import java.security.Principal;
 import java.util.Map;
 
 @Configuration
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
-    private AppProperties appProperties;
-    private AuthenticationInterceptor authenticationInterceptor;
-    private WebSocketConnectionInterceptor websocketConnectionInterceptor;
-    private AppStompErrorHandler appStompErrorHandler;
+    private final AppProperties appProperties;
+    private final AuthenticationInterceptor authenticationInterceptor;
+    private final WebSocketConnectionInterceptor websocketConnectionInterceptor;
+    private final AppStompErrorHandler appStompErrorHandler;
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
@@ -76,6 +76,16 @@ class AppEndpointHandShakeHandler extends DefaultHandshakeHandler {
 
     @Override
     protected Principal determineUser(ServerHttpRequest request, WebSocketHandler wsHandler, Map<String, Object> attributes) {
-        return new PrincipalImpl("default");
+        return new Principal() {
+            @Override
+            public String getName() {
+                return "default";
+            }
+
+            @Override
+            public boolean implies(Subject subject) {
+                return false;
+            }
+        };
     }
 }
