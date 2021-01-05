@@ -15,6 +15,21 @@
         <module>spring-admin-demo-client-1</module>
         <module>spring-admin-demo-client-2</module>
         <module>spring-admin-demo-sever</module>
+        <module>spring-admin-custom-ui</module>
     </modules>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>2.3.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>2.3.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
