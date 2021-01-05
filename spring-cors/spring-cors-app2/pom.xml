@@ -16,7 +16,6 @@
         <dependency>
             <groupId>cn.t</groupId>
             <artifactId>web-util</artifactId>
-            <version>1.0.7-RELEASE</version>
         </dependency>
     </dependencies>
 
