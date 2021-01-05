@@ -6,9 +6,6 @@ spring:
         name: service-consumer
     jackson:
         default-property-inclusion: non_null
-    devtools:
-        livereload:
-            port: 0
 
 eureka:
     instance:

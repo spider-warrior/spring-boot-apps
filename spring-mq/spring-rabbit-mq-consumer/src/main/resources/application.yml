@@ -1,5 +1,8 @@
 server:
     port: 8081
+    servlet:
+        encoding:
+            charset: UTF-8
 
 spring:
     rabbitmq:
@@ -14,9 +17,6 @@ spring:
               max-concurrency: 10
               acknowledge-mode: manual
               prefetch: 1 #限流
-    http:
-        encoding:
-            charset: UTF-8
     jackson:
         date-format: yyyy-MM-dd HH:mm:ss
         time-zone: GMT+8
