@@ -31,4 +31,4 @@ extension:
 application:
     feign:
         service:
-            user: "user-service"
+            user: "service-provider"
