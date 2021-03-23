@@ -4,22 +4,35 @@ server:
 spring:
     application:
         name: eureka
-
 eureka:
     instance:
+        # 向注册中心发送心跳的频率
         lease-renewal-interval-in-seconds: 2
+        # 心跳过期时间
         lease-expiration-duration-in-seconds: 5
-        prefer-ip-address: true
+        # 主机名称 与 prefer-ip-address 独立使用
+        hostname: eureka3.service.com
+        # 示例ID
         instance-id: ${spring.cloud.client.ip-address}:${server.port}
     client:
+        # 向注册中心注册自己, 影响Renews threshold(Eureka Server 期望每分钟收到客户端实例续约的阈值。)
         register-with-eureka: true
-        # 要不要去注册中心获取其他服务的地址
+        # 去注册中心获取其他服务的地址
         fetch-registry: true
         service-url:
             defaultZone: "http://eureka1.service.com:2001/eureka/,http://eureka2.service.com:2002/eureka/"
     server:
         # 当从其他节点同步实例信息为空时等待的时间
         wait-time-in-ms-when-sync-empty: 0
+        # 主动从readWrite缓存中移除过期key
         eviction-interval-timer-in-ms: 5000
-        response-cache-update-interval-ms: 5000
+        # readWrite缓存过期时间
+        response-cache-auto-expiration-in-seconds: 30000
+        # 是否使用只读缓存
         use-read-only-response-cache: false
+        # 当指定时间内收到心跳低于50%时出发保护模式，影响Renews threshold
+        renewal-percent-threshold: 0.5
+        # 阈值更新的时间间隔，配合renewal-percent-threshold一起使用，影响Renews threshold
+        renewal-threshold-update-interval-ms: 300000
+        # 客户端应该多久发送发送一次心跳
+        expected-client-renewal-interval-seconds: 3
