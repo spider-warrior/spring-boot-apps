@@ -17,6 +17,8 @@
         <module>spring-mq-entity</module>
         <module>spring-rabbit-mq-producer</module>
         <module>spring-rabbit-mq-consumer</module>
+        <module>spring-kafka-mq-consumer</module>
+        <module>spring-kafka-mq-producer</module>
     </modules>
 
     <properties>
