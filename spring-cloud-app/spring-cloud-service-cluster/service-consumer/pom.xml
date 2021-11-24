@@ -14,16 +14,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>cn.t</groupId>
-            <artifactId>web-util</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.study.springboot</groupId>
             <artifactId>service-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.t.extension.springboot</groupId>
-            <artifactId>web-extension-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 

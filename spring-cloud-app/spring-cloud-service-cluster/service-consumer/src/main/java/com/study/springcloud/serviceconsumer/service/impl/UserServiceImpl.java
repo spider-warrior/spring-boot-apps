@@ -1,6 +1,5 @@
 package com.study.springcloud.serviceconsumer.service.impl;
 
-import cn.t.util.common.RandomUtil;
 import com.jy.study.springcloud.serviceremote.User;
 import com.jy.study.springcloud.serviceremote.UserServiceApi;
 import com.study.springcloud.serviceconsumer.service.UserService;
@@ -20,7 +19,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserById(Long id) {
         ServiceInstance serviceInstance = loadBalancerClient.choose("user-service");
-        ResponseEntity<User> responseEntity = restTemplate.getForEntity("http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/user/{1}{2}", User.class, id, RandomUtil.randomInt(10, 99));
+        ResponseEntity<User> responseEntity = restTemplate.getForEntity("http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/user/{1}{2}", User.class, id, String.valueOf(System.currentTimeMillis()));
         return responseEntity.getBody();
     }
 
