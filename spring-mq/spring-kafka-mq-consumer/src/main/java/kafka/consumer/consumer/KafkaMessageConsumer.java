@@ -20,6 +20,7 @@ public class KafkaMessageConsumer {
             throw new RuntimeException("金额太大: " + msg.getPaidMoney());
         }
         System.out.println("收到消息: " + msg);
+        //手动提交
         ack.acknowledge();
     }
 }

@@ -13,6 +13,9 @@ import java.util.Date;
 
 /**
  * KafkaMessageController
+ * send方法返回值为future可以添加回调方法
+ * kafkaTemplate默认为异步执行, 同步执行的方式为template.send(topic, data).get()
+ *
  * @author <a href="mailto:yangjian@ifenxi.com">研发部-杨建</a>
  * @version V1.0
  * @since 2021-11-25 14:49
@@ -23,8 +26,8 @@ public class KafkaMessageController {
     private final KafkaTemplate<Object, Object> template;
     private final ObjectMapper objectMapper;
 
-    private boolean randomMoney = false;
-    private boolean validJson = true;
+    private final boolean randomMoney = false;
+    private final boolean validJson = true;
 
     @GetMapping("produce")
     public void produce() throws Exception {

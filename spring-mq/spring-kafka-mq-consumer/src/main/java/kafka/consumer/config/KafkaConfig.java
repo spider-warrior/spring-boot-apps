@@ -27,6 +27,13 @@ public class KafkaConfig {
         return new StringJsonMessageConverter();
     }
 
+    /**
+     * 当backoff尝试完后会继续抓取后面可处理的消息，处理提交offset成功后将丢失问题数据
+     * 如果想在处理逻辑不丢失数据就设置无限期尝试消费
+     *
+     * 当BackOff为BackOffExecution.STOP状态时执行DeadLetterPublishingRecoverer#accept方法然后从map中移除问题分区
+     * 如果map大小为0则从ThreadLocal中移除map
+     */
     @Bean
     public SeekToCurrentErrorHandler errorHandler(KafkaOperations<Object, Object> template) {
         return new SeekToCurrentErrorHandler(
