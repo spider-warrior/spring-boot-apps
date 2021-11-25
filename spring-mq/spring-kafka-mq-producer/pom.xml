@@ -11,5 +11,24 @@
 
     <artifactId>spring-kafka-mq-producer</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.study.springboot</groupId>
+            <artifactId>spring-mq-entity</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.t</groupId>
+            <artifactId>common-util</artifactId>
+            <version>1.0.11.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 </project>

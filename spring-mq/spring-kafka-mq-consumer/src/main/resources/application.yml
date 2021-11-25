@@ -1,0 +1,20 @@
+server:
+    port: ${random.int[20000,59999]}
+
+spring:
+    application:
+        name: kafka-consumer-app
+    kafka:
+        bootstrap-servers: 192.168.1.5:9092
+        consumer:
+            group-id: ${spring.application.name}
+            enable-auto-commit: false
+            auto-offset-reset: earliest
+            max-poll-records: 10
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            auto-commit-interval:
+
+        listener:
+            ack-mode: MANUAL_IMMEDIATE
+            missing-topics-fatal: false
