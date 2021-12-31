@@ -12,9 +12,9 @@ import org.springframework.util.StringUtils;
 import java.lang.reflect.Modifier;
 
 /**
- * @description: inject util
+ * inject util
  * create: 2019-09-23 16:46
- * @author: yj
+ * @author yj
  **/
 public class InjectUtil {
 

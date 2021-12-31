@@ -4,9 +4,9 @@ import org.springframework.beans.factory.support.MergedBeanDefinitionPostProcess
 import org.springframework.beans.factory.support.RootBeanDefinition;
 
 /**
- * @description: merge bean definition
+ * merge bean definition
  * create: 2019-09-23 14:12
- * @author: yj
+ * @author yj
  **/
 public class MergedBeanDefinitionPostProcessorExt implements MergedBeanDefinitionPostProcessor {
     @Override

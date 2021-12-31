@@ -9,9 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @description: this is for test
+ * this is for test
  * create: 2019-09-23 15:43
- * @author: yj
+ * @author yj
  **/
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes={SpringStudyApplication.class})// 指定启动类

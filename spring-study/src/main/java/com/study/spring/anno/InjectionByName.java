@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 import java.lang.annotation.*;
 
 /**
- * @description: 自定义注入
+ * 自定义注入
  * create: 2019-09-23 14:07
- * @author: yj
+ * @author yj
  **/
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
