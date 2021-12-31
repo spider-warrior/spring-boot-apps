@@ -16,7 +16,7 @@ import java.util.Date;
  * send方法返回值为future可以添加回调方法
  * kafkaTemplate默认为异步执行, 同步执行的方式为template.send(topic, data).get()
  *
- * @author <a href="mailto:yangjian@ifenxi.com">研发部-杨建</a>
+ * @author <a href="mailto:yangjian@liby.ltd">研发部-杨建</a>
  * @version V1.0
  * @since 2021-11-25 14:49
  **/
